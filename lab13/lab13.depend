@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1566105444 source:c:\users\sadia\desktop\lab8\lab13\lab13\stacktype.cpp
+	<iostream>
+	"stacktype.h"
+
+1566142990 c:\users\sadia\desktop\lab8\lab13\lab13\stacktype.h
+
