@@ -28,6 +28,17 @@ bool areParanthesisBalanced(string expr)
         if (s.IsEmpty())
            return false;
 
+//
+//        if (expr[i]==')' )
+//        {
+//            if (s.Top()=='(')
+//                s.Pop();
+////            else
+////                s.Push(expr[i]);
+//        }
+//
+//    }
+//    }
         switch (expr[i])
         {
         case ')':
@@ -36,17 +47,22 @@ bool areParanthesisBalanced(string expr)
             x = s.Top();
             s.Pop();
             if (x=='{' || x=='[')
-                return false;
+
+                return (expr[')']);
             break;
+           // s.Push(expr[')']);
 
         case '}':
+
 
             // Store the top element in b
             x = s.Top();
             s.Pop();
             if (x=='(' || x=='[')
-                return false;
+
+                return (expr['}']);
             break;
+           // s.Push(expr['}']);
 
         case ']':
 
@@ -54,11 +70,25 @@ bool areParanthesisBalanced(string expr)
             x = s.Top();
             s.Pop();
             if (x =='(' || x == '{')
-                return false;
+
+                return(expr[']']);
             break;
+            //s.Push(expr[']']);
         }
     }
-
+//stack<char> s;
+//    for (int i=0; i<len; i++)
+//    {
+//        if (expr[i]=='}' && !s.empty())
+//        {
+//            if (s.top()=='{')
+//                s.pop();
+//            else
+//                s.push(expr[i]);
+//        }
+//        else
+//            s.push(expr[i]);
+//    }
     // Check Empty Stack
     return (s.IsEmpty());
 }
@@ -66,11 +96,12 @@ bool areParanthesisBalanced(string expr)
 // Driver program to test above function
 int main()
 {
-    string expr = "{()}[]";
+    string expr = "{({())}[]";
+//int s.Pop(expr[i]);
 
     if (areParanthesisBalanced(expr))
-        cout << "Balanced";
+        cout << "the Balanced expression is "<<expr;
     else
-        cout << "Not Balanced";
+        cout << "the Not Balanced expression is "<<expr;
     return 0;
 }
